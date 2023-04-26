@@ -22,14 +22,13 @@
         /// </summary>
         protected void GenList()
         {
-            var rand = new Random();
             List<int> temp = new List<int>();
             for (int it = MinValue; it <= MaxValue; ++it)
                 temp.Add(it);
             List = new();
             while (temp.Count > 0)
             {
-                var addInt = temp[rand.Next(0, temp.Count)];
+                var addInt = temp[CRNG.GenerationInt(0, temp.Count)];
                 List.Push(addInt);
                 temp.Remove(addInt);
             }

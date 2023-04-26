@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography;
 
 namespace ModifiedSchemeElGamal.HelperClasses
 {
@@ -11,6 +8,7 @@ namespace ModifiedSchemeElGamal.HelperClasses
     /// </summary>
     internal static class CRNG
     {
-
+        public static int GenerationInt(int MinValue, int MaxValue) =>
+            RandomNumberGenerator.GetInt32(MinValue, MaxValue);
     }
 }
