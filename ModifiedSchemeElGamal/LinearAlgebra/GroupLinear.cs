@@ -2,7 +2,7 @@
 
 namespace ModifiedSchemeElGamal.LinearAlgebra
 {
-    internal class GroupLinear
+    internal sealed class GroupLinear
     {
         public static GroupLinear Instance => new GroupLinear();
         public List<int[,]>? GenerationGL(int N, int P)
@@ -11,8 +11,8 @@ namespace ModifiedSchemeElGamal.LinearAlgebra
             if (g != null)
             {
                 var ListGL = new List<int[,]>();
-                var rand = new RandomNotRepeat(1, N * N * N); 
-                for(int it = 0; it < N; ++it)
+                var rand = new RandomNotRepeat(1, N * N * N);
+                for (int it = 0; it < N; ++it)
                 {
                     var GL = new int[N, N];
                     for (var i = 0; i < N; ++i)

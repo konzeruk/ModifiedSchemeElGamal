@@ -1,6 +1,6 @@
 ﻿namespace ModifiedSchemeElGamal.HelperClasses
 {
-    internal class RandomNotRepeat : Random
+    internal sealed class RandomNotRepeat : Random
     {
         private int MinValue,
             MaxValue;
