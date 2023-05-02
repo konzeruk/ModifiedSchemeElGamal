@@ -1,5 +1,6 @@
 ﻿using ModifiedSchemeElGamal.HelperClasses;
 using ModifiedSchemeElGamal.LinearAlgebra;
+using ModifiedSchemeElGamal.MathematicalOperators;
 
 namespace ModifiedSchemeElGamal
 {
@@ -49,17 +50,12 @@ namespace ModifiedSchemeElGamal
         }
         public void TestModDet(int[,] Matrix,int P)
         {
-            var md = MathActions.ModDet(Matrix,P);
-            if (MathActions.GCD(md,(double)P) == 1)
+           var t = MathActions.ModMatrixInv(Matrix, P);
+            for(var i =0;i<t.GetLength(0);++i)
             {
-                var mdInv = MathActions.MultInv(md,P);
-                var t = MathActions.ModMatrixInvCode(Matrix, (int)mdInv, P);
-                for (var row = 0; row < t.GetLength(0); ++row)
-                {
-                    for (var col = 0; col < t.GetLength(1); ++col)
-                        Console.Write($"{t[row, col]}\t");
-                    Console.WriteLine();
-                }
+                for (var j = 0; j < t.GetLength(1); ++j)
+                    Console.Write($"{t[i, j]}\t");
+                Console.WriteLine();
             }
         }
     }

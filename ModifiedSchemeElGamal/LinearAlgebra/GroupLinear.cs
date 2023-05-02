@@ -1,4 +1,5 @@
 ﻿using ModifiedSchemeElGamal.HelperClasses;
+using ModifiedSchemeElGamal.MathematicalOperators;
 
 namespace ModifiedSchemeElGamal.LinearAlgebra
 {
