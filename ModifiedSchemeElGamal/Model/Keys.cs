@@ -1,6 +1,6 @@
 ﻿namespace ModifiedSchemeElGamal.Model
 {
-    internal sealed class Keys
+    public sealed class Keys
     {
         public readonly OpenKey OpenKey;
         public readonly int SecretKey;

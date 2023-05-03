@@ -41,6 +41,17 @@
                     Result[row, col] = Matrix[row, col] * Value;
             return Result;
         }
-
+        public static int[,] MulMatrix(int[,] A, int[,] B)
+        {
+            var numRowsA = A.GetLength(0);
+            var numRowsB = B.GetLength(0);
+            var numColsB = B.GetLength(1);
+            var Result = new int[numRowsA, numColsB];
+            for (int i = 0; i < numRowsA; ++i)
+                for (int j = 0; j < numColsB; ++j)
+                    for (int k = 0; k < numRowsB; ++k)
+                        Result[i, j] += A[i, k] * B[k, j];
+            return Result;
+        }
     }
 }

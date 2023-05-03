@@ -4,21 +4,22 @@ namespace ModifiedSchemeElGamal.MathematicalOperators
 {
     internal static partial class MathActions
     {
-        public static int[,] ModPowMatrix(int[,] Matrix, int Degree, int P)
+        public static int[,] ModPow(int[,] Matrix, int Degree, int P)
         {
-            var sizeMatrix = Matrix.GetLength(0);
-            var Result = new int[sizeMatrix, sizeMatrix];
-            for (var row = 0; row < sizeMatrix; ++row)
-                for (var col = 0; col < sizeMatrix; ++col)
+            var numRows = Matrix.GetLength(0);
+            var numCols = Matrix.GetLength(1);
+            var Result = new int[numRows, numCols];
+            for (var row = 0; row < numRows; ++row)
+                for (var col = 0; col < numCols; ++col)
                     Result[row, col] = Matrix[row, col];
             for (var d = 1; d < Degree; ++d)
             {
-                var temp = new int[sizeMatrix, sizeMatrix];
-                for (var row = 0; row < sizeMatrix; ++row)
-                    for (var col = 0; col < sizeMatrix; ++col)
+                var temp = new int[numRows, numCols];
+                for (var row = 0; row < numRows; ++row)
+                    for (var col = 0; col < numCols; ++col)
                     {
                         BigInteger sum = 0;
-                        for (var k = 0; k < sizeMatrix; k++)
+                        for (var k = 0; k < numRows; k++)
                             sum += Result[row, k] * Matrix[k, col];
                         temp[row, col] = Mod(sum, P);
                     }
@@ -75,8 +76,18 @@ namespace ModifiedSchemeElGamal.MathematicalOperators
                 Degree >>= 1;
                 Value = (Value * Value) % P;
                 if ((Degree & 1) == 1)
-                    Result = (Result * Value) % P;
+                    Result = Mod((Result * Value), P);
             }
+            return Result;
+        }
+        public static int[,] Mod(int[,] Matrix, int P)
+        {
+            var numRows = Matrix.GetLength(0);
+            var numCols = Matrix.GetLength(1);
+            var Result = new int[numRows, numCols];
+            for (var row = 0; row < numRows; ++row)
+                for (var col = 0; col < numCols; ++col)
+                    Result[row, col] = Mod(Matrix[row, col], P);
             return Result;
         }
         public static int Mod(int Value, int P)

@@ -17,7 +17,7 @@ namespace ModifiedSchemeElGamal.HelperClasses
                 throw new ArgumentException("Error: primitive root not found");
             var X = bufX;
             var A = CRNG.GenerationInt(2, P - 1);
-            var Xa = MathActions.ModPowMatrix(X, A, P);
+            var Xa = MathActions.ModPow(X, A, P);
             return new Keys(new OpenKey(new G(N, P), X, Xa), A);
         }
     }

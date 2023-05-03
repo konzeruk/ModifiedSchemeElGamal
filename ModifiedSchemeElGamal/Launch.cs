@@ -1,11 +1,34 @@
 ﻿using ModifiedSchemeElGamal.HelperClasses;
 using ModifiedSchemeElGamal.LinearAlgebra;
 using ModifiedSchemeElGamal.MathematicalOperators;
+using ModifiedSchemeElGamal.Model;
+using ModifiedSchemeElGamal.SchemeElGamal;
 
 namespace ModifiedSchemeElGamal
 {
     public class Launch
     {
+        public void TestEncr()
+        {
+            int[,] x = { { 2, 4, 6 }, { 5, 5, 2 }, { 1, 1, 0 } };
+            int[,] xa = { { 0, 0, 1 }, { 3, 4, 4 }, { 4, 1, 4 } };
+            var ok = new OpenKey(new G(3, 7), x, xa);
+            var seg = new SEG();
+            var t = seg.Encryption("", ok);
+            for (var i = 0; i < t.Xr.GetLength(0); ++i)
+            {
+                for (var j = 0; j < t.Xr.GetLength(1); ++j)
+                    Console.Write($"{t.Xr[i, j]}\t");
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+            for (var i = 0; i < t.C.GetLength(0); ++i)
+            {
+                for (var j = 0; j < t.C.GetLength(1); ++j)
+                    Console.Write($"{t.C[i, j]}\t");
+                Console.WriteLine();
+            }
+        }
         public void TestGenKeys()
         {
             var t = GenerationKeys.GetKeys();

@@ -1,6 +1,6 @@
 ﻿namespace ModifiedSchemeElGamal.Model
 {
-    internal sealed class OpenKey
+    public sealed class OpenKey
     {
         public readonly G GL;
         public readonly int[,] X;
