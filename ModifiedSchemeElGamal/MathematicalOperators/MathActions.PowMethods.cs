@@ -1,5 +1,4 @@
 ﻿using System.Numerics;
-
 namespace ModifiedSchemeElGamal.MathematicalOperators
 {
     internal static partial class MathActions
@@ -27,6 +26,21 @@ namespace ModifiedSchemeElGamal.MathematicalOperators
             }
             return Result;
         }
+        public static int ModPow(int Value, int Degree, int P)
+        {
+            var Result = 1;
+            Value = Mod(Value, P);
+            if ((Degree & 1) == 1)
+                Result = Value;
+            while (Degree > 1)
+            {
+                Degree >>= 1;
+                Value = (Value * Value) % P;
+                if ((Degree & 1) == 1)
+                    Result = Mod((Result * Value), P);
+            }
+            return Result;
+        }
         public static int[,]? ModMatrixInv(int[,] Matrix, int P)
         {
             if (Matrix.GetLength(0) != Matrix.GetLength(1))
@@ -35,7 +49,7 @@ namespace ModifiedSchemeElGamal.MathematicalOperators
             if (GCD(md, P) == 1)
             {
                 var mdInv = MultInv(md, P);
-                return ModMatrixInvCode(Matrix, (int)mdInv, P);
+                return ModMatrixInvCode(Matrix, mdInv, P);
             }
             return null;
         }
@@ -64,21 +78,6 @@ namespace ModifiedSchemeElGamal.MathematicalOperators
                     det += (int)Math.Pow(-1, (row + 2)) * Matrix[row, 0] * ModDet(GetMinorMatrix(Matrix, row, 0), P);
                 return Mod(det, P);
             }
-        }
-        public static int ModPow(int Value, int Degree, int P)
-        {
-            var Result = 1;
-            Value = Mod(Value, P);
-            if ((Degree & 1) == 1)
-                Result = Value;
-            while (Degree > 1)
-            {
-                Degree >>= 1;
-                Value = (Value * Value) % P;
-                if ((Degree & 1) == 1)
-                    Result = Mod((Result * Value), P);
-            }
-            return Result;
         }
         public static int[,] Mod(int[,] Matrix, int P)
         {

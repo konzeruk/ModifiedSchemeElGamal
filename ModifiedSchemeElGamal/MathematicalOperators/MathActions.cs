@@ -24,7 +24,7 @@
             else
                 return GCD(B, Mod(A, B));
         }
-        public static int MultInv(int A, int N)
+        private static int MultInv(int A, int N)
         {
             var r1 = N;
             var r2 = A;
