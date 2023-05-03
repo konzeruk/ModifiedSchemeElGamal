@@ -6,22 +6,17 @@ namespace ModifiedSchemeElGamal.LinearAlgebra
     internal sealed class GroupLinear
     {
         public static GroupLinear Instance => new GroupLinear();
-        public List<int[,]>? GenerationGL(int N, int P)
+        public int[,]? GenerationGL(int N, int P)
         {
             var g = FindPrimitiveRoot(P);
             if (g != null)
             {
-                var ListGL = new List<int[,]>();
+                var GL = new int[N, N];
                 var rand = new RandomNotRepeat(1, N * N * N);
-                for (int it = 0; it < N; ++it)
-                {
-                    var GL = new int[N, N];
-                    for (var i = 0; i < N; ++i)
-                        for (var j = 0; j < N; ++j)
-                            GL[i, j] = MathActions.ModPow((int)g, rand.Next(), P);
-                    ListGL.Add(GL);
-                }
-                return ListGL;
+                for (var i = 0; i < N; ++i)
+                    for (var j = 0; j < N; ++j)
+                        GL[i, j] = MathActions.ModPow((int)g, rand.Next(), P);
+                return GL;
             }
             return null;
         }
