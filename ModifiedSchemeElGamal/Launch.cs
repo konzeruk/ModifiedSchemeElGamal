@@ -21,7 +21,6 @@ namespace ModifiedSchemeElGamal
                     Console.Write($"{m[i, j]}\t");
                 Console.WriteLine();
             }
-
         }
         public void TestGenKeys()
         {

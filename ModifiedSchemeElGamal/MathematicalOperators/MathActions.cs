@@ -28,19 +28,19 @@
         {
             var r1 = N;
             var r2 = A;
-            var t1 = 0.0;
-            var t2 = 1.0;
+            var t1 = 0;
+            var t2 = 1;
             while (r2 > 0)
             {
-                var q = Math.Round((double)r1 / r2);
+                var q = Math.Floor((double)r1 / r2);
                 var r = Mod(r1, r2);
                 var t = t1 - q * t2;
                 r1 = r2;
                 r2 = r;
                 t1 = t2;
-                t2 = t;
+                t2 = (int)t;
             }
-            return (int)t1;
+            return t1;
         }
 
     }
