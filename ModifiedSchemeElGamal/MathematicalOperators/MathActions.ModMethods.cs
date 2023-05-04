@@ -9,10 +9,7 @@ namespace ModifiedSchemeElGamal.MathematicalOperators
                 throw new ArgumentException("Error: size matrix");
             var numRows = Matrix.GetLength(0);
             var numCols = Matrix.GetLength(1);
-            var Result = new int[numRows, numCols];
-            for (var row = 0; row < numRows; ++row)
-                for (var col = 0; col < numCols; ++col)
-                    Result[row, col] = Matrix[row, col];
+            var Result = Matrix;
             for (var d = 1; d < Degree; ++d)
             {
                 var temp = new int[numRows, numCols];
@@ -62,10 +59,7 @@ namespace ModifiedSchemeElGamal.MathematicalOperators
             for (var row = 0; row < sizeMatrix; ++row)
                 for (var col = 0; col < sizeMatrix; ++col)
                     Result[row, col] = (int)Math.Pow(-1, row + col + 2) * ModDet(GetMinorMatrix(Matrix, row, col), P);
-            Result = MulMatrix(Transposition(Result), MDInv);
-            for (var row = 0; row < Matrix.GetLength(0); ++row)
-                for (var col = 0; col < Matrix.GetLength(1); ++col)
-                    Result[row, col] = Mod(Result[row, col], P);
+            Result = Mod(MulMatrix(Transposition(Result), MDInv), P);
             return Result;
         }
         private static int ModDet(int[,] Matrix, int P)

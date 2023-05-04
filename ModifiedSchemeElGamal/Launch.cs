@@ -7,6 +7,10 @@ namespace ModifiedSchemeElGamal
 {
     public class Launch
     {
+        public void TestHashFunc()
+        {
+            Console.WriteLine(HashFunctions.GetHashGOST("Asaagfhfsdaaaf"));
+        }
         public void TestEncr()
         {
             var key = GenerationKeys.GetKeys();

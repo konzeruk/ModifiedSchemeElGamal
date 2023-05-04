@@ -2,16 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>GOST34_10_12</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="alglib.net" Version="3.19.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\GOST34.10.12\GOST34.10.12.csproj" />
-  </ItemGroup>
 
 </Project>
