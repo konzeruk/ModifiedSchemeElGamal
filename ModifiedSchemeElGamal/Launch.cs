@@ -13,6 +13,7 @@ namespace ModifiedSchemeElGamal
             var seg = new SEG();
             var t = seg.Encryption("ZEfdfs dsafsf asdaf .,?!@#;~D123", key.OpenKey);
             Console.WriteLine(seg.Decryption(t, key));
+
         }
         public void TestGenKeys()
         {
