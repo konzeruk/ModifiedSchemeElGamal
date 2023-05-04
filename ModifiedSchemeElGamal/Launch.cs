@@ -11,17 +11,8 @@ namespace ModifiedSchemeElGamal
         {
             var key = GenerationKeys.GetKeys();
             var seg = new SEG();
-            var t = seg.Encryption("ZEABCD123", key.OpenKey);
-            var b = MathActions.ModPow(t.Xr, key.SecretKey, key.OpenKey.GL.P);
-            var a = MathActions.ModMatrixInv(b,key.OpenKey.GL.P);
-            var m = MathActions.Mod(MathActions.MulMatrix(a,t.C),key.OpenKey.GL.P);
-            for (var i = 0; i < m.GetLength(0); ++i)
-            {
-                for (var j = 0; j < m.GetLength(1); ++j)
-                    Console.Write($"{m[i, j]}\t");
-                Console.WriteLine();
-            }
-
+            var t = seg.Encryption("ZEfdfs dsafsf asdaf .,?!@#;~D123", key.OpenKey);
+            Console.WriteLine(seg.Decryption(t, key));
         }
         public void TestGenKeys()
         {

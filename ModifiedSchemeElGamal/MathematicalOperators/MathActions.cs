@@ -17,7 +17,7 @@
                     return false;
             return true;
         }
-        private static int GCD(int A, int B)
+        public static int GCD(int A, int B)
         {
             if (B == 0)
                 return A;
@@ -32,7 +32,7 @@
             var t2 = 1.0;
             while (r2 > 0)
             {
-                var q = Math.Round((double)r1 / r2);
+                var q = Math.Floor((double)r1 / r2);
                 var r = Mod(r1, r2);
                 var t = t1 - q * t2;
                 r1 = r2;

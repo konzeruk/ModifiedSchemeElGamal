@@ -2,14 +2,26 @@
 {
     internal static partial class MathActions
     {
-        private static int[,] Transposition(int[,] Matrix)
+        public static int[,] MulMatrix(int[,] Matrix, int Value)
         {
             var sizeMatrix = Matrix.GetLength(0);
-            var Trans = new int[sizeMatrix, sizeMatrix];
-            for (var row = 0; row < sizeMatrix; ++row)
-                for (var col = 0; col < sizeMatrix; ++col)
-                    Trans[row, col] = Matrix[col, row];
-            return Trans;
+            var Result = new int[sizeMatrix, sizeMatrix];
+            for (var row = 0; row < Matrix.GetLength(0); ++row)
+                for (var col = 0; col < Matrix.GetLength(1); ++col)
+                    Result[row, col] = Matrix[row, col] * Value;
+            return Result;
+        }
+        public static int[,] MulMatrix(int[,] A, int[,] B)
+        {
+            var numRowsA = A.GetLength(0);
+            var numRowsB = B.GetLength(0);
+            var numColsB = B.GetLength(1);
+            var Result = new int[numRowsA, numColsB];
+            for (int i = 0; i < numRowsA; ++i)
+                for (int j = 0; j < numColsB; ++j)
+                    for (int k = 0; k < numRowsB; ++k)
+                        Result[i, j] += A[i, k] * B[k, j];
+            return Result;
         }
         private static int[,] GetMinorMatrix(int[,] Matrix, int Row, int Col)
         {
@@ -32,26 +44,14 @@
             }
             return Result;
         }
-        public static int[,] MulMatrix(int[,] Matrix, int Value)
+        private static int[,] Transposition(int[,] Matrix)
         {
             var sizeMatrix = Matrix.GetLength(0);
-            var Result = new int[sizeMatrix, sizeMatrix];
-            for (var row = 0; row < Matrix.GetLength(0); ++row)
-                for (var col = 0; col < Matrix.GetLength(1); ++col)
-                    Result[row, col] = Matrix[row, col] * Value;
-            return Result;
-        }
-        public static int[,] MulMatrix(int[,] A, int[,] B)
-        {
-            var numRowsA = A.GetLength(0);
-            var numRowsB = B.GetLength(0);
-            var numColsB = B.GetLength(1);
-            var Result = new int[numRowsA, numColsB];
-            for (int i = 0; i < numRowsA; ++i)
-                for (int j = 0; j < numColsB; ++j)
-                    for (int k = 0; k < numRowsB; ++k)
-                        Result[i, j] += A[i, k] * B[k, j];
-            return Result;
+            var Trans = new int[sizeMatrix, sizeMatrix];
+            for (var row = 0; row < sizeMatrix; ++row)
+                for (var col = 0; col < sizeMatrix; ++col)
+                    Trans[row, col] = Matrix[col, row];
+            return Trans;
         }
     }
 }

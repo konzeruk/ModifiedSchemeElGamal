@@ -5,6 +5,8 @@ namespace ModifiedSchemeElGamal.MathematicalOperators
     {
         public static int[,] ModPow(int[,] Matrix, int Degree, int P)
         {
+            if (Matrix.GetLength(0) != Matrix.GetLength(1))
+                throw new ArgumentException("Error: size matrix");
             var numRows = Matrix.GetLength(0);
             var numCols = Matrix.GetLength(1);
             var Result = new int[numRows, numCols];
