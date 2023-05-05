@@ -1,7 +1,9 @@
-﻿using ModifiedSchemeElGamal.HelperClasses;
+﻿using Accord.Math;
+using ModifiedSchemeElGamal.HelperClasses;
 using ModifiedSchemeElGamal.MathematicalOperators;
 using ModifiedSchemeElGamal.Model;
 using ModifiedSchemeElGamal.SchemeElGamal;
+using System.Numerics;
 
 namespace ModifiedSchemeElGamal
 {
@@ -9,7 +11,7 @@ namespace ModifiedSchemeElGamal
     {
         public void TestHashFunc()
         {
-            Console.WriteLine(HashFunctions.GetHashGOST("Asaagfhfsdaaaf"));
+            Console.WriteLine(HashFunctions.GetHashGOST(BitConverter.GetBytes(65)));
         }
         public void TestEncr()
         {

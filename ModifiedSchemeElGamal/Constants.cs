@@ -6,6 +6,7 @@
         public const int MaxP = 300;
         public const int MinN = 2;
         public const int MaxN = 10;
+        public const int NumHashFunctions = 3;
         public const char CompSymbol = '~';
     }
 }

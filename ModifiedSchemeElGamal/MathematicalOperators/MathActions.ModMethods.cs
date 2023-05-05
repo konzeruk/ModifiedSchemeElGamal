@@ -75,6 +75,16 @@ namespace ModifiedSchemeElGamal.MathematicalOperators
                 return Mod(det, P);
             }
         }
+        public static int[,] Mod(BigInteger[,] Matrix, int P )
+        {
+            var numRows = Matrix.GetLength(0);
+            var numCols = Matrix.GetLength(1);
+            var Result = new int[numRows, numCols];
+            for (var row = 0; row < numRows; ++row)
+                for (var col = 0; col < numCols; ++col)
+                    Result[row, col] = Mod(Matrix[row, col], P);
+            return Result;
+        }
         public static int[,] Mod(int[,] Matrix, int P)
         {
             var numRows = Matrix.GetLength(0);

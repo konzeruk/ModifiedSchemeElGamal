@@ -8,9 +8,9 @@ namespace ModifiedSchemeElGamal.Interface
         public Ciphertext Encryption(string Text, OpenKey _OpenKey);
         public string Decryption(Ciphertext _Ciphertext, Keys _Keys);
         //electronic digital signature
-        public string EDS();
+        public Ciphertext? EDS(string Text, OpenKey _OpenKey);
         //digital signature verification
-        public string DSV();
+        public bool DSV(string Text, Ciphertext _Ciphertext, Keys _Keys);
     }
    
 }
