@@ -1,12 +1,17 @@
 ﻿using ModifiedSchemeElGamal.LinearAlgebra;
-using ModifiedSchemeElGamal.Model;
+using ModifiedSchemeElGamal.Model.Encryption;
 using ModifiedSchemeElGamal.MathematicalOperators;
 
 namespace ModifiedSchemeElGamal.HelperClasses
 {
-    internal static class GenerationKeys
+    internal static partial class GenerationKeys
     {
-        public static Keys GetKeys()
+        /// <summary>
+        /// Generates keys for encryption (line groups are used)
+        /// </summary>
+        /// <returns> class Keys (Encryption) </returns>
+        /// <exception cref="ArgumentException"></exception>
+        public static Keys GetKeysEncryption()
         {
             var groupLinear = GroupLinear.Instance;
             var listPrimeP = MathActions.GetListPrimeValue(Constants.MinP, Constants.MaxP);

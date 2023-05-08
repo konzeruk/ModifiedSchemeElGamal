@@ -22,28 +22,28 @@ namespace ModifiedSchemeElGamal.MathematicalOperators
                     Result[row, col] = Matrix[row, col] * Value;
             return Result;
         }
-        public static int[,] MulMatrix(int[,] A, int[,] B)
+        public static int[,] MulMatrix(int[,] MatrixA, int[,] MatrixB)
         {
-            var numRowsA = A.GetLength(0);
-            var numRowsB = B.GetLength(0);
-            var numColsB = B.GetLength(1);
+            var numRowsA = MatrixA.GetLength(0);
+            var numRowsB = MatrixB.GetLength(0);
+            var numColsB = MatrixB.GetLength(1);
             var Result = new int[numRowsA, numColsB];
             for (int i = 0; i < numRowsA; ++i)
                 for (int j = 0; j < numColsB; ++j)
                     for (int k = 0; k < numRowsB; ++k)
-                        Result[i, j] += A[i, k] * B[k, j];
+                        Result[i, j] += MatrixA[i, k] * MatrixB[k, j];
             return Result;
         }
-        public static BigInteger[,] MulMatrix(int[,] A, BigInteger[,] B)
+        public static BigInteger[,] MulMatrix(int[,] MatrixA, BigInteger[,] MatrixB)
         {
-            var numRowsA = A.GetLength(0);
-            var numRowsB = B.GetLength(0);
-            var numColsB = B.GetLength(1);
+            var numRowsA = MatrixA.GetLength(0);
+            var numRowsB = MatrixB.GetLength(0);
+            var numColsB = MatrixB.GetLength(1);
             var Result = new BigInteger[numRowsA, numColsB];
             for (int i = 0; i < numRowsA; ++i)
                 for (int j = 0; j < numColsB; ++j)
                     for (int k = 0; k < numRowsB; ++k)
-                        Result[i, j] += A[i, k] * B[k, j];
+                        Result[i, j] += MatrixA[i, k] * MatrixB[k, j];
             return Result;
         }
         private static int[,] GetMinorMatrix(int[,] Matrix, int Row, int Col)

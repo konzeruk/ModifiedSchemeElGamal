@@ -6,11 +6,10 @@
             MaxValue;
         private Stack<int> List;
         /// <summary>
-        /// Инициализирует новый экземпляр класса System.Random с помощью зависимого
-        //  от времени начального значения по умолчанию.
+        /// Initializes a new instance of the System.Random class
         /// </summary>
-        /// <param name="min">Включенной нижний предел возвращаемого случайного числа.</param>
-        /// <param name="max">Исключенный верхний предел возвращаемого случайного числа. Значение maxValue должно быть больше или равно значению minValue.</param>
+        /// <param name="MinValue">Included lower limit of returned random number</param>
+        /// <param name="MaxValue">The excluded upper limit of the returned random number (maxValue must be greater than or equal to minValue)</param>
         public RandomNotRepeat(int MinValue, int MaxValue)
         {
             this.MaxValue = MaxValue;
@@ -18,11 +17,11 @@
             GenList();
         }
         /// <summary>
-        /// Генерация списка исключений
+        /// Exception list generation
         /// </summary>
         protected void GenList()
         {
-            List<int> temp = new List<int>();
+            var temp = new List<int>();
             for (int it = MinValue; it <= MaxValue; ++it)
                 temp.Add(it);
             List = new();
@@ -34,9 +33,9 @@
             }
         }
         /// <summary>
-        /// Возвращает неотрицательное случайное число.
+        /// Returns a non-negative random number
         /// </summary>
-        /// <returns>32-разрядное целое число со знаком большее или равное minValue и меньше, чем maxValue; то есть, диапазон возвращаемого значения включает minValue, не включает maxValue. Если значение параметра minValue равно значению параметра maxValue, то возвращается значение minValue.</returns>
+        /// <returns>Signed integer greater than or equal to minValue and less than maxValue</returns>
         public override int Next()
         {
             if (List.Count > 0)

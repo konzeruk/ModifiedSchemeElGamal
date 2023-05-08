@@ -1,7 +1,24 @@
 ﻿namespace ModifiedSchemeElGamal.MathematicalOperators
 {
+    /// <summary>
+    /// Mathematical operations necessary for calculations
+    /// </summary>
     internal static partial class MathActions
     {
+        public static int Pow(int A, int Degree) =>
+            (int)Math.Pow(A, Degree);
+        public static int InvMod(int A, int P)
+        {
+            (var g, var x, var y) = GCDEX(A, P);
+            return g > 1 ? 0 : (x % P + P) % P;
+        }
+        private static (int, int, int) GCDEX(int A, int B)
+        {
+            if (A == 0)
+                return (B, 0, 1);
+            (var gcd, var x, var y) = GCDEX(B % A, A);
+            return (gcd, y - (B / A) * x, x);
+        }
         public static List<int> GetListPrimeValue(int MinValue, int MaxVal)
         {
             var ListPrimeValue = new List<int>();

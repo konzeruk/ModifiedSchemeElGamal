@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+
 namespace ModifiedSchemeElGamal.MathematicalOperators
 {
     internal static partial class MathActions
@@ -26,6 +27,21 @@ namespace ModifiedSchemeElGamal.MathematicalOperators
             return Result;
         }
         public static int ModPow(int Value, int Degree, int P)
+        {
+            var Result = 1;
+            Value = Mod(Value, P);
+            if ((Degree & 1) == 1)
+                Result = Value;
+            while (Degree > 1)
+            {
+                Degree >>= 1;
+                Value = (Value * Value) % P;
+                if ((Degree & 1) == 1)
+                    Result = Mod((Result * Value), P);
+            }
+            return Result;
+        }
+        public static int ModPow(int Value, BigInteger Degree, int P)
         {
             var Result = 1;
             Value = Mod(Value, P);

@@ -5,7 +5,17 @@ namespace ModifiedSchemeElGamal.LinearAlgebra
 {
     internal sealed class GroupLinear
     {
+        /// <summary>
+        /// Initializes a new instance of the GroupLinear class
+        /// </summary>
         public static GroupLinear Instance => new GroupLinear();
+        private GroupLinear() { }
+        /// <summary>
+        /// Generation sub linear group (GLn(P))
+        /// </summary>
+        /// <param name="N">Order linear group</param>
+        /// <param name="P">Modul</param>
+        /// <returns>Matrix that is a linear group</returns>
         public int[,]? GenerationGL(int N, int P)
         {
             var g = FindPrimitiveRoot(P);
@@ -20,7 +30,12 @@ namespace ModifiedSchemeElGamal.LinearAlgebra
             }
             return null;
         }
-        private int? FindPrimitiveRoot(int P)
+        /// <summary>
+        /// Find primitive root
+        /// </summary>
+        /// <param name="P">Modul</param>
+        /// <returns>Value primitive root or null</returns>
+        public int? FindPrimitiveRoot(int P)
         {
             List<int> fact = new();
             var phi = P - 1;

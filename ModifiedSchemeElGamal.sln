@@ -5,8 +5,6 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModifiedSchemeElGamal", "ModifiedSchemeElGamal\ModifiedSchemeElGamal.csproj", "{4C5F6948-B4A4-4EF1-90F4-8A38620AB151}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLibrary", "TestLibrary\TestLibrary.csproj", "{E28358A2-C590-4027-9A53-C019481F4FA1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GOST34.10.12", "GOST34.10.12\GOST34.10.12.csproj", "{E1EC7D69-571C-4F6E-A655-7A65BBB029DE}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{4C5F6948-B4A4-4EF1-90F4-8A38620AB151}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C5F6948-B4A4-4EF1-90F4-8A38620AB151}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C5F6948-B4A4-4EF1-90F4-8A38620AB151}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E28358A2-C590-4027-9A53-C019481F4FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E28358A2-C590-4027-9A53-C019481F4FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E28358A2-C590-4027-9A53-C019481F4FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E28358A2-C590-4027-9A53-C019481F4FA1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E1EC7D69-571C-4F6E-A655-7A65BBB029DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E1EC7D69-571C-4F6E-A655-7A65BBB029DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1EC7D69-571C-4F6E-A655-7A65BBB029DE}.Release|Any CPU.ActiveCfg = Release|Any CPU

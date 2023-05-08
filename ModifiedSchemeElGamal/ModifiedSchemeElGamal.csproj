@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Accord.Math" Version="3.8.0" />
-    <PackageReference Include="alglib.net" Version="3.19.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\GOST34.10.12\GOST34.10.12.csproj" />
   </ItemGroup>
 

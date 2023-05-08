@@ -1,7 +1,8 @@
 ﻿using ModifiedSchemeElGamal;
+using ModifiedSchemeElGamal.SchemeElGamal;
 int[,] c = { { 5, 1, 3 }, { 4, 3, 3 }, { 1, 0, 0 } };
 Launch launch = new();
-launch.TestHashFunc();
+launch.TestSEGEDS();
 //launch.TestEncr();
 /*using TestLibrary;
 int[,] x = { { 4, 9 }, { 136, 135 } };
