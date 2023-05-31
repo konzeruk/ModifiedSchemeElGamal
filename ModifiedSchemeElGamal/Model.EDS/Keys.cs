@@ -3,7 +3,7 @@
     /// <summary>
     /// Keys for digital signature
     /// </summary>
-    public class Keys
+    public sealed class Keys
     {
         /// <summary>
         /// Public key

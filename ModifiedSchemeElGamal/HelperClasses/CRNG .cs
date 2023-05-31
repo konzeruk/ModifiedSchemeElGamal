@@ -6,7 +6,7 @@ namespace ModifiedSchemeElGamal.HelperClasses
     /// <summary>
     /// Cryptographic random number generator
     /// </summary>
-    internal static class CRNG
+    internal static sealed class CRNG
     {
         public static int GenerationInt(int MinValue, int MaxValue) =>
             RandomNumberGenerator.GetInt32(MinValue, MaxValue);

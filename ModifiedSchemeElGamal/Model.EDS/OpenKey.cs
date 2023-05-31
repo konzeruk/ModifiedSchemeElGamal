@@ -1,6 +1,6 @@
 ﻿namespace ModifiedSchemeElGamal.Model.EDS
 {
-    public class OpenKey
+    public sealed class OpenKey
     {
         /// <summary>
         /// Random prime number

@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ModifiedSchemeElGamal.Model.Encryption.Ciphertext">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAA=</HashCode>
+      <FileName>Model.Encryption\Ciphertext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.Model.Encryption.G">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBAAAA=</HashCode>
+      <FileName>Model.Encryption\G.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.Model.Encryption.Keys">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAA=</HashCode>
+      <FileName>Model.Encryption\Keys.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.Model.Encryption.OpenKey">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Model.Encryption\OpenKey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.HelperClasses.CRNG">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HelperClasses\CRNG .cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.HelperClasses.GenerationKeys">
+    <Position X="8.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>HelperClasses\GenerationKeys.EDS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.HelperClasses.HashFunctions">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAgIAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>HelperClasses\HashFunctions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.HelperClasses.RandomNotRepeat">
+    <Position X="0.5" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAgAAAAAAI=</HashCode>
+      <FileName>HelperClasses\RandomNotRepeat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.MathematicalOperators.MathActions">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAgIhAEAASYCAAAAAAASAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MathematicalOperators\MathActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.Model.EDS.Keys">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAA=</HashCode>
+      <FileName>Model.EDS\Keys.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.Model.EDS.OpenKey">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACABAIAA=</HashCode>
+      <FileName>Model.EDS\OpenKey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.Model.EDS.Signature">
+    <Position X="10.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAQA=</HashCode>
+      <FileName>Model.EDS\Signature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.SchemeElGamal.SEG" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABIAAIAAAAAAACAAAAAAEAAAACAAgQ=</HashCode>
+      <FileName>SchemeElGamal\SEG.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.179" Collapsed="true" />
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.LinearAlgebra.GroupLinear">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>LinearAlgebra\GroupLinear.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModifiedSchemeElGamal.Constants">
+    <Position X="3" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAQAEAAAAAAAAAAAAAAAAAAAAAAEAAAAQAAAAAQ=</HashCode>
+      <FileName>Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ModifiedSchemeElGamal.Interface.ISEG">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAIAAAAAAACAAAAAAEAAAACAAgA=</HashCode>
+      <FileName>Interface\ISEG.EDS.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
