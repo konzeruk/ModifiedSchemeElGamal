@@ -4,7 +4,7 @@ using GOST34_10_12;
 
 namespace ModifiedSchemeElGamal.HelperClasses
 {
-    internal static sealed class HashFunctions
+    internal static class HashFunctions
     {
         /// <summary>
         /// Get hash value appropriate IndexHashFunctions

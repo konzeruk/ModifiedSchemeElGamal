@@ -4,7 +4,7 @@ using ModifiedSchemeElGamal.MathematicalOperators;
 
 namespace ModifiedSchemeElGamal.HelperClasses
 {
-    internal static partial sealed class GenerationKeys
+    internal static partial class GenerationKeys
     {
         /// <summary>
         /// Generates keys for encryption (line groups are used)
